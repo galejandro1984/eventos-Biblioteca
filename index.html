@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos | Biblioteca Pública Regional Benito Juárez</title>
+    <style>
+        /* Estilos generales */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #f4f4f9; 
+            color: #333; 
+        }
+        header { 
+            background-color: #2c3e50; 
+            color: white; 
+            padding: 2.5rem 1rem; 
+            text-align: center; 
+        }
+        header h1 { margin: 0; font-size: 2.2rem; }
+        
+        /* Contenedor principal */
+        .container { 
+            max-width: 800px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+        }
+        
+        /* Sección de contacto */
+        .contact-info {
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            border: 1px solid #d1e8f0;
+        }
+        .contact-info p {
+            margin: 0.5rem 0;
+            font-size: 1.05rem;
+        }
+        .contact-info strong {
+            color: #2980b9;
+        }
+
+        /* Título de sección */
+        .section-title {
+            color: #2c3e50;
+            border-bottom: 2px solid #bdc3c7;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Tarjetas de eventos */
+        .event-card { 
+            background: white; 
+            border-left: 5px solid #2980b9;
+            border-radius: 8px; 
+            padding: 1.5rem; 
+            margin-bottom: 1.5rem; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); 
+            transition: transform 0.2s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .event-title { 
+            color: #2c3e50; 
+            margin-top: 0; 
+            margin-bottom: 0.3rem;
+            font-size: 1.4rem;
+        }
+        .event-details { 
+            font-weight: 600; 
+            color: #e67e22; 
+            font-size: 0.95em; 
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+        }
+        .event-description {
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+        
+        /* Pie de página */
+        footer { 
+            text-align: center; 
+            padding: 1.5rem; 
+            background-color: #ecf0f1; 
+            margin-top: 3rem; 
+            font-size: 0.85em; 
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Eventos de la Biblioteca Pública Regional Benito Juárez</h1>
+    </header>
+
+    <div class="container">
+        
+        <!-- Información de contacto -->
+        <div class="contact-info">
+            <p>Para más información se puede comunicar al teléfono: <strong>6461761610</strong></p>
+            <p>Correo electrónico: <strong>bibliotecapublicabenitojuarez@gmail.com</strong></p>
+            <p>WhatsApp: <strong>6465242101</strong></p>
+        </div>
+
+        <h2 class="section-title">Eventos de la Biblioteca:</h2>
+        
+        <!-- Evento 1 -->
+        <div class="event-card">
+            <h3 class="event-title">Chocolate Artístico</h3>
+            <p class="event-details">Del 27 al 31 de julio | 17:00 a 19:00 horas</p>
+            <p class="event-description">Dirigido a jóvenes y adultos.</p>
+        </div>
+
+        <!-- Evento 2 -->
+        <div class="event-card">
+            <h3 class="event-title">Taller de "Acuariofilia"</h3>
+            <p class="event-details">Próximamente | 16:00 a 18:00 horas</p>
+            <p class="event-description">El cuidado de los peces, crustáceos, ranas y ajolotes. Dirigido a niños de 9 a 12 años.<br><em>*Cupo limitado a 12 niños.</em></p>
+        </div>
+
+        <!-- Evento 3 -->
+        <div class="event-card">
+            <h3 class="event-title">Taller de Lenguaje de Señas Mexicanas</h3>
+            <p class="event-details">Lunes y Martes (Julio y Agosto) | 09:00 a 11:00 horas</p>
+            <p class="event-description">Aprende los fundamentos de la Lengua de Señas Mexicana en este taller de verano.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p> 2026 Biblioteca Pública Regional Benito Juárez | Ensenada, Baja California</p>
+    </footer>
+
+</body>
+</html>
