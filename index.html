@@ -30,10 +30,10 @@
         
         /* Sección de contacto */
         .contact-info {
-            background-color: #f9f1f2; /* Fondo guinda muy claro */
+            background-color: #f9f1f2; 
             border-radius: 8px;
             padding: 1.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             text-align: center;
             border: 1px solid #ebd3d6;
         }
@@ -43,6 +43,58 @@
         }
         .contact-info strong {
             color: #6A1B29;
+        }
+
+        /* Cuenta Regresiva Aniversario */
+        .countdown-container {
+            background-color: #6A1B29; /* Guinda */
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-bottom: 5px solid #B38E5D; /* Detalle dorado */
+        }
+        .countdown-container h3 {
+            margin-top: 0;
+            color: #B38E5D;
+            font-size: 1.6rem;
+            margin-bottom: 0.2rem;
+        }
+        .countdown-container p {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .time-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 70px;
+        }
+        .time-box span:first-child {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: white;
+            line-height: 1;
+        }
+        .time-box .label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #B38E5D;
+            margin-top: 8px;
+            font-weight: 600;
+            letter-spacing: 1px;
         }
 
         /* Título de sección */
@@ -56,7 +108,7 @@
         /* Tarjetas de eventos */
         .event-card { 
             background: white; 
-            border-left: 5px solid #6A1B29; /* Borde izquierdo guinda */
+            border-left: 5px solid #6A1B29; 
             border-radius: 8px; 
             padding: 1.5rem; 
             margin-bottom: 1.5rem; 
@@ -75,7 +127,7 @@
         }
         .event-details { 
             font-weight: 600; 
-            color: #B38E5D; /* Dorado complementario */
+            color: #B38E5D; 
             font-size: 0.95em; 
             margin-top: 0;
             margin-bottom: 0.8rem;
@@ -111,6 +163,30 @@
             <p>WhatsApp: <strong>6465242101</strong></p>
         </div>
 
+        <!-- Cuenta Regresiva de Aniversario -->
+        <div class="countdown-container">
+            <h3>¡Rumbo a nuestro 53° Aniversario!</h3>
+            <p>2 de diciembre de 1973 - 2 de diciembre de 2026</p>
+            <div id="countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <span class="label">Días</span>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <span class="label">Minutos</span>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <span class="label">Segundos</span>
+                </div>
+            </div>
+        </div>
+
         <h2 class="section-title">Eventos de la Biblioteca:</h2>
         
         <!-- Evento 1 -->
@@ -123,7 +199,7 @@
         <!-- Evento 2 -->
         <div class="event-card">
             <h3 class="event-title">Taller de "Acuariofilia"</h3>
-            <p class="event-details">Del 3 al 7 de Agosto | 16:00 a 18:00 horas</p>
+            <p class="event-details">Próximamente | 16:00 a 18:00 horas</p>
             <p class="event-description">El cuidado de los peces, crustáceos, ranas y ajolotes. Dirigido a niños de 9 a 12 años.<br><em>*Cupo limitado a 12 niños.</em></p>
         </div>
 
@@ -137,8 +213,37 @@
     </div>
 
     <footer>
-        <p> 2026 Biblioteca Pública Regional Benito Juárez | Ensenada, Baja California</p>
+        <p>&copy; 2026 Biblioteca Pública Regional Benito Juárez | Ensenada, Baja California</p>
     </footer>
 
+    <!-- Script de la Cuenta Regresiva -->
+    <script>
+        // Fecha del 53 aniversario
+        const countDownDate = new Date("Dec 2, 2026 00:00:00").getTime();
+
+        // Actualizar la cuenta cada segundo (1000 milisegundos)
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Cálculos de tiempo para días, horas, minutos y segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Mostrar el resultado con un cero a la izquierda si es menor a 10 (ej. 05)
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            // Si la cuenta llega a cero, mostrar un mensaje festivo
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<h3 style='color: white; margin-top: 10px;'>¡Hoy celebramos nuestro 53° Aniversario! 🎉</h3>";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
